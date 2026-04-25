@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Invofly</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1D9E75;
+    --green-light: #e8f7f2;
+    --green-dark: #155f47;
+    --ink: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #fafaf9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── Header ── */
+  header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--green);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-mark svg { width: 20px; height: 20px; }
+  .logo-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+    padding: 64px 24px 56px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .hero-meta {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta span {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-meta span::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+  }
+
+  /* ── Content ── */
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+  }
+  .toc a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .toc a:hover { color: var(--green); }
+  .toc-num {
+    font-size: 11px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    min-width: 18px;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 48px;
+    scroll-margin-top: 80px;
+  }
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .section-num {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+  p {
+    color: #374151;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* Info boxes */
+  .info-box {
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .info-box p {
+    color: var(--green-dark);
+    font-size: 14px;
+    margin: 0;
+  }
+  .info-box strong { color: var(--green-dark); }
+
+  /* Lists */
+  ul, ol {
+    padding-left: 0;
+    list-style: none;
+    margin: 12px 0;
+  }
+  ul li, ol li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #374151;
+  }
+  ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  ol { counter-reset: ol-counter; }
+  ol li { counter-increment: ol-counter; }
+  ol li::before {
+    content: counter(ol-counter) '.';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 600;
+    top: 2px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  /* Contact */
+  .contact-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+  .contact-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .contact-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+  .contact-email:hover { background: var(--green-dark); }
+
+  /* Footer */
+  footer {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+  }
+  footer p { font-size: 13px; color: var(--muted); }
+  footer strong { color: var(--ink); }
+
+  @media (max-width: 560px) {
+    .toc ol { grid-template-columns: 1fr; }
+    .hero { padding: 48px 20px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+        <circle cx="12" cy="12" r="9"/>
+        <polyline points="12 7 12 12 15 15"/>
+      </svg>
+    </div>
+    <span class="logo-name">Invofly</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>We respect your privacy. Here's exactly what data we collect, why, and how we protect it.</p>
+  <div class="hero-meta">
+    <span>Effective: April 25, 2026</span>
+    <span>Last updated: April 25, 2026</span>
+    <span>Version 1.0</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1"><span class="toc-num">01</span> Overview</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span> Data We Collect</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span> Data Storage</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span> Third-Party Services</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span> License Keys</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span> Children's Privacy</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span> Your Rights</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span> Changes to Policy</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span> Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Overview</h2>
+    </div>
+    <div class="info-box">
+      <p><strong>Short version:</strong> Invofly stores all your data locally on your device. We do not have servers. We do not collect personal data. Your business information never leaves your phone.</p>
+    </div>
+    <p>Invofly ("we", "our", "the app") is a time tracking and invoicing application for freelancers. This Privacy Policy explains what information is collected, how it is used, and your rights regarding that information.</p>
+    <p>By using Invofly, you agree to the practices described in this policy.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Data We Collect</h2>
+    </div>
+
+    <p><strong>Data you enter directly:</strong></p>
+    <ul>
+      <li>Client names, email addresses, phone numbers, company names</li>
+      <li>Time entries, project names, task descriptions</li>
+      <li>Invoice details, amounts, tax and discount values</li>
+      <li>Your business name, address, and contact information</li>
+    </ul>
+
+    <p style="margin-top:16px"><strong>App settings (stored locally):</strong></p>
+    <ul>
+      <li>Language preference</li>
+      <li>Dark/light mode preference</li>
+      <li>Default currency</li>
+      <li>Pro license activation status</li>
+    </ul>
+
+    <div class="info-box">
+      <p><strong>We do NOT collect:</strong> location data, device identifiers, analytics, usage statistics, crash reports, or any personal information beyond what you enter yourself.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Data Storage</h2>
+    </div>
+    <p>All data entered in Invofly is stored <strong>exclusively on your device</strong> using a local SQLite database and device preferences (SharedPreferences). We do not operate any servers or cloud infrastructure to store your data.</p>
+    <p>This means:</p>
+    <ul>
+      <li>Your data is private by default and never transmitted to us</li>
+      <li>Uninstalling the app will permanently delete all your data</li>
+      <li>We cannot recover your data if your device is lost or reset</li>
+      <li>We recommend exporting CSV reports regularly as a backup</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>Invofly uses one third-party service for payment processing only:</p>
+
+    <p><strong>Creem.io</strong> — Payment processor for Pro license purchases.</p>
+    <ul>
+      <li>Used only when you choose to purchase the Pro version</li>
+      <li>Creem.io collects your email and payment information to process the transaction</li>
+      <li>We receive only a license key — no payment card data is shared with us</li>
+      <li>Creem.io's privacy policy: <a href="https://creem.io/privacy" style="color:var(--green)">creem.io/privacy</a></li>
+    </ul>
+
+    <p style="margin-top:16px"><strong>PDF sharing</strong> — When you share an invoice as PDF, the sharing is handled by your device's native share sheet (iOS Share Sheet / Android Share). The PDF file is temporarily stored in your device's cache directory and automatically deleted.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>License Keys</h2>
+    </div>
+    <p>When you activate the Pro version with a license key:</p>
+    <ul>
+      <li>The key is validated against Creem.io's API over a secure HTTPS connection</li>
+      <li>The key and activation status are stored locally on your device only</li>
+      <li>License keys are valid for <strong>1 year</strong> from the date of activation</li>
+      <li>We do not store a record of which device your key is activated on</li>
+    </ul>
+    <div class="info-box">
+      <p>Keep your license key safe. You can reuse it to restore Pro access on any device, or after reinstalling the app.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>Invofly is not directed to children under the age of 13. We do not knowingly collect any personal information from children. If you believe a child has provided personal information through the app, please contact us and we will take appropriate steps.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Since all data is stored locally on your device, you have full control:</p>
+    <ul>
+      <li><strong>Access:</strong> All your data is directly accessible inside the app</li>
+      <li><strong>Export:</strong> Use the CSV export feature (Pro) to export all your data</li>
+      <li><strong>Delete:</strong> Delete individual entries, clients, or invoices within the app at any time</li>
+      <li><strong>Full erasure:</strong> Uninstalling the app permanently deletes all data</li>
+    </ul>
+    <p>For users in the European Economic Area (EEA), you have additional rights under GDPR including the right to access, rectify, and erase your personal data. Since we do not process or store your personal data on our servers, these rights are exercised directly on your device.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <p>We encourage you to review this policy periodically.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Contact Us</h2>
+    </div>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
+
+    <div class="contact-card">
+      <h3>We're here to help</h3>
+      <p>Questions about privacy or your data? Send us an email and we'll respond within 48 hours.</p>
+      <a href="mailto:support@invofly.app" class="contact-email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        support@invofly.app
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 <strong>Invofly</strong> · All rights reserved · <a href="mailto:support@invofly.app" style="color:var(--green)">support@invofly.app</a></p>
+</footer>
+
+</body>
+</html>
