@@ -31,7 +31,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.93);backdrop
 .lang-selector{position:relative;}
 .lang-btn-nav{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;color:var(--ink);}
 .lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12);min-width:200px;padding:8px;display:none;z-index:200;max-height:320px;overflow-y:auto;}
-.lang-selector:hover .lang-dropdown{display:block;}
+.lang-dropdown.open{display:block !important;}
 .lang-option{padding:8px 12px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;}
 .lang-option:hover{background:var(--green-light);color:var(--green-dark);}
 .lang-option.active{background:var(--green-light);color:var(--green-dark);font-weight:700;}
@@ -135,10 +135,10 @@ footer .logo{font-family:'Playfair Display',serif;font-size:24px;color:white;mar
       <a href="#legal" data-i18n="nav_legal">Legal</a>
     </div>
     <div class="lang-selector">
-      <button class="lang-btn-nav" id="currentLang">🇬🇧 EN ▾</button>
+      <button class="lang-btn-nav" id="currentLang" onclick="toggleLangDropdown(event)">🇬🇧 EN ▾</button>
       <div class="lang-dropdown" id="langDropdown"></div>
     </div>
-    <a href="#pricing" class="nav-cta" data-i18n="nav_cta">Get Pro — $9.99/yr</a>
+    <span class="nav-cta" style="opacity:0.5;cursor:not-allowed;" data-i18n="nav_cta">Get Pro — $9.99/yr</span>
   </div>
 </nav>
 
@@ -148,7 +148,7 @@ footer .logo{font-family:'Playfair Display',serif;font-size:24px;color:white;mar
   <p data-i18n="hero_p">All-in-one time tracker and invoice generator. Works offline. Your data stays on your device.</p>
   <div class="hero-btns">
     <a href="#pricing" class="btn-primary" data-i18n="hero_btn1">Get Pro — $9.99 / year</a>
-    <a href="#features" class="btn-secondary" data-i18n="hero_btn2">See features</a>
+    <a href="#features" class="btn-secondary" data-i18n="hero_btn2" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'});return false;">See features</a>
   </div>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-num">16</div><div class="hero-stat-label" data-i18n="stat_langs">Languages</div></div>
@@ -216,7 +216,7 @@ footer .logo{font-family:'Playfair Display',serif;font-size:24px;color:white;mar
         <li data-i18n="free_f4">PDF invoices (with watermark)</li>
         <li data-i18n="free_f5">Monthly reports</li>
       </ul>
-      <a href="https://play.google.com/store/apps/details?id=com.invofly.app" class="price-btn" data-i18n="free_btn" target="_blank">Download Free</a>
+      <span class="price-btn" style="opacity:0.35;cursor:not-allowed;pointer-events:none;border-style:dashed;" data-i18n="free_btn">Coming Soon</span>
     </div>
     <div class="price-card featured">
       <div class="price-badge" data-i18n="pro_badge">Most Popular</div>
@@ -232,7 +232,7 @@ footer .logo{font-family:'Playfair Display',serif;font-size:24px;color:white;mar
         <li data-i18n="pro_f6">Priority email support</li>
         <li data-i18n="pro_f7">Use on any device with your key</li>
       </ul>
-      <a href="https://www.creem.io/payment/prod_YOURPRODID" class="price-btn white" data-i18n="pro_btn">Get Pro — $9.99/year →</a>
+      <span class="price-btn white" style="opacity:0.5;cursor:not-allowed;pointer-events:none;" data-i18n="pro_btn">Get Pro — Coming Soon</span>
     </div>
   </div>
   <p class="pricing-note" data-i18n="price_note">💳 Secure payment · Card & PayPal · Activation key sent to email instantly<br>License valid for 1 year. Questions? <a href="mailto:invofly@gmail.com" style="color:var(--green)">invofly@gmail.com</a></p>
@@ -315,6 +315,16 @@ footer .logo{font-family:'Playfair Display',serif;font-size:24px;color:white;mar
 </footer>
 
 <script>
+// ── Lang dropdown toggle ──────────────────────────────────────
+function toggleLangDropdown(e) {
+  e.stopPropagation();
+  const dd = document.getElementById('langDropdown');
+  dd.classList.toggle('open');
+}
+document.addEventListener('click', function() {
+  document.getElementById('langDropdown').classList.remove('open');
+});
+
 // ── Translations ──────────────────────────────────────────────
 const langs = {
   en:  {flag:'🇬🇧', name:'English',           nav_features:'Features', nav_pricing:'Pricing', nav_legal:'Legal', nav_cta:'Get Pro — $9.99/yr', hero_badge:'For Freelancers Worldwide', hero_h1:'Track time.<br><em>Get paid.</em><br>Stay in control.', hero_p:'All-in-one time tracker and invoice generator. Works offline. Your data stays on your device.', hero_btn1:'Get Pro — $9.99 / year', hero_btn2:'See features', stat_langs:'Languages', stat_currencies:'Currencies', stat_offline:'Offline', stat_data:'Data collected', feat_label:'Features', feat_h2:'Everything you need to run your freelance business', feat_sub:'Timer, invoices, and reports — all in one app, all offline, all private.', f1_title:'One-tap Timer', f1_desc:'Start tracking instantly. Assign time to any client and project. Tag by type.', f2_title:'PDF Invoices', f2_desc:'Generate professional invoices in seconds. Auto-totals, tax, discount. Share via any app.', f3_title:'Reports & Insights', f3_desc:'Monthly, yearly & all-time reports. Client breakdown charts. CSV export.', f4_title:'16 Languages & 97 Currencies', f4_desc:'Available in 16 languages. Bill in any of 97 currencies with correct formatting.', f5_title:'100% Private & Offline', f5_desc:'No servers, no cloud, no analytics. All data on your device only.', f6_title:'Client Management', f6_desc:'Organize clients with hourly rates, currencies, and contact info.', price_label:'Pricing', price_h2:'Simple, honest pricing', price_sub:'One low annual fee. No hidden costs, no subscription traps.', free_name:'Free Plan', free_period:'Forever free', free_f1:'Up to 3 clients', free_f2:'Up to 2 invoices', free_f3:'Basic timer tracking', free_f4:'PDF invoices (with watermark)', free_f5:'Monthly reports', free_btn:'Download Free', pro_badge:'Most Popular', pro_name:'Pro Plan', pro_period:'per year · one-time annual payment', pro_f1:'Unlimited clients', pro_f2:'Unlimited invoices', pro_f3:'PDF without watermark', pro_f4:'Full reports: monthly, yearly, all-time', pro_f5:'CSV export', pro_f6:'Priority email support', pro_f7:'Use on any device with your key', pro_btn:'Get Pro — $9.99/year →', price_note:'💳 Secure payment · Card & PayPal · Activation key sent to email instantly<br>License valid for 1 year.'},
